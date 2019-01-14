@@ -3724,145 +3724,145 @@
 		<time>8:00</time>
 		<away eName="hawks">老鹰</away>
 		<home eName="sixers">76人</home>
-		<result>未开始</result>
+		<result>123-121</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>8:00</time>
 		<away eName="bucks">雄鹿</away>
 		<home eName="wizards">奇才</home>
-		<result>未开始</result>
+		<result>106-113</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>8:30</time>
 		<away eName="pacers">步行者</away>
 		<home eName="knicks">尼克斯</home>
-		<result>未开始</result>
+		<result>121-106</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>8:30</time>
 		<away eName="nets">篮网</away>
 		<home eName="raptors">猛龙</home>
-		<result>未开始</result>
+		<result>105-122</result>
 	</game>
+  <game year="2019" month="1" date="12">
+    <time>9:00</time>
+    <away eName="cavaliers">骑士</away>
+    <home eName="rockets">火箭</home>
+    <result>113-141</result>
+  </game>
 	<game year="2019" month="1" date="12">
 		<time>9:00</time>
 		<away eName="mavericks">独行侠</away>
 		<home eName="timberwolves">森林狼</home>
-		<result>未开始</result>
-	</game>
-	<game year="2019" month="1" date="12">
-		<time>9:00</time>
-		<away eName="cavaliers">骑士</away>
-		<home eName="rockets">火箭</home>
-		<result>未开始</result>
+		<result>119-115</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>11:00</time>
 		<away eName="lakers">湖人</away>
 		<home eName="jazz">爵士</home>
-		<result>未开始</result>
+		<result>95-113</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>11:00</time>
 		<away eName="hornets">黄蜂</away>
 		<home eName="blazers">开拓者</home>
-		<result>未开始</result>
+		<result>96-127</result>
 	</game>
 	<game year="2019" month="1" date="12">
 		<time>11:30</time>
 		<away eName="bulls">公牛</away>
 		<home eName="warriors">勇士</home>
-		<result>未开始</result>
+		<result>109-146</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>4:30</time>
 		<away eName="pistons">活塞</away>
 		<home eName="clippers">快船</home>
-		<result>未开始</result>
+		<result>109-104</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>6:00</time>
 		<away eName="grizzlies">灰熊</away>
 		<home eName="heat">热火</home>
-		<result>未开始</result>
+		<result>108-112</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>8:00</time>
 		<away eName="celtics">凯尔特人</away>
 		<home eName="magic">魔术</home>
-		<result>未开始</result>
+		<result>103-105</result>
 	</game>
+  <game year="2019" month="1" date="13">
+    <time>9:00</time>
+    <away eName="pelicans">鹈鹕</away>
+    <home eName="timberwolves">森林狼</home>
+    <result>106-110</result>
+  </game>
 	<game year="2019" month="1" date="13">
 		<time>9:00</time>
 		<away eName="spurs">马刺</away>
 		<home eName="thunder">雷霆</home>
-		<result>未开始</result>
-	</game>
-	<game year="2019" month="1" date="13">
-		<time>9:00</time>
-		<away eName="pelicans">鹈鹕</away>
-		<home eName="timberwolves">森林狼</home>
-		<result>未开始</result>
+		<result>112-122</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>10:00</time>
 		<away eName="nuggets">掘金</away>
 		<home eName="suns">太阳</home>
-		<result>未开始</result>
+		<result>93-102</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>11:00</time>
 		<away eName="hornets">黄蜂</away>
 		<home eName="kings">国王</home>
-		<result>未开始</result>
+		<result>97-104</result>
 	</game>
 	<game year="2019" month="1" date="13">
 		<time>11:00</time>
 		<away eName="bulls">公牛</away>
 		<home eName="jazz">爵士</home>
-		<result>未开始</result>
+		<result>102-110</result>
 	</game>
-	<game year="2019" month="1" date="14">
-		<time>2:00</time>
-		<away eName="raptors">猛龙</away>
-		<home eName="wizards">奇才</home>
-		<result>未开始</result>
-	</game>
-	<game year="2019" month="1" date="14">
-		<time>2:00</time>
-		<away eName="sixers">76人</away>
-		<home eName="knicks">尼克斯</home>
-		<result>未开始</result>
-	</game>
+  <game year="2019" month="1" date="14">
+    <time>2:00</time>
+    <away eName="sixers">76人</away>
+    <home eName="knicks">尼克斯</home>
+    <result>108-105</result>
+  </game>
+  <game year="2019" month="1" date="14">
+    <time>2:00</time>
+    <away eName="raptors">猛龙</away>
+    <home eName="wizards">奇才</home>
+    <result>140-138</result>
+  </game>
 	<game year="2019" month="1" date="14">
 		<time>4:30</time>
 		<away eName="bucks">雄鹿</away>
 		<home eName="hawks">老鹰</home>
-		<result>未开始</result>
+		<result>133-114</result>
 	</game>
 	<game year="2019" month="1" date="14">
 		<time>7:00</time>
 		<away eName="rockets">火箭</away>
 		<home eName="magic">魔术</home>
-		<result>未开始</result>
+		<result>109-116</result>
 	</game>
 	<game year="2019" month="1" date="14">
 		<time>8:00</time>
 		<away eName="warriors">勇士</away>
 		<home eName="mavericks">独行侠</home>
-		<result>未开始</result>
+		<result>119-114</result>
 	</game>
 	<game year="2019" month="1" date="14">
 		<time>9:00</time>
 		<away eName="blazers">开拓者</away>
 		<home eName="nuggets">掘金</home>
-		<result>未开始</result>
+		<result>113-116</result>
 	</game>
 	<game year="2019" month="1" date="14">
 		<time>10:30</time>
 		<away eName="cavaliers">骑士</away>
 		<home eName="lakers">湖人</home>
-		<result>未开始</result>
+		<result>101-95</result>
 	</game>
 	<game year="2019" month="1" date="15">
 		<time>8:30</time>
