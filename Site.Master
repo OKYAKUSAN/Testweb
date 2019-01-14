@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TestWeb.SiteMaster" %>
+<%@ Import Namespace="TestWeb.Model" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <% Response.Write("<link href='/Styles/master.css?v=" + (DateTime.Now.Subtract(new DateTime())).TotalSeconds.ToString() + "' type='text/css' rel='stylesheet' />"); %>
+    <script type="text/javascript" src="/Scripts/jquery-1.12.4.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <!-- header -->
+    <div class="top">
+        <div class="banner">
+            <div class="banner-layout">
+                <div class="logo"><img src="images/logo.png" alt="NBA" /></div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-list-li">
+                        <a href="/index.aspx" class="nav-list-a">首页</a>
+                    </li>
+                    <li class="nav-list-li">
+                        <a href="/schedule.aspx" class="nav-list-a">赛程</a>
+                    </li>
+                    <li class="nav-list-li nav-tag">
+                        <a href="teamschedule.html?team=warriors" class="nav-list-a">球队</a>
+                        <div class="teamsList">
+                            <div class="teamsList-header">
+                            	<div>西部联盟</div>
+                            	<div>东部联盟</div>
+                            </div>
+                            <div class="teamsList-main">
+                                <!--<asp:Literal ID="teamList" runat="server" />-->
+                                <div class="area">
+                                    <div class="area-header"><%= pacificDivision[0].Zone %></div>
+                                <%
+                                    bool bgBoolen = true;
+                                    string strHtml = "";
+                                    foreach (Team _tempTeam in pacificDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                                <div class="area">
+                                    <div class="area-header"><%= northwestDivision[0].Zone %></div>
+                                <%
+                                    bgBoolen = true;
+                                    strHtml = "";
+                                    foreach (Team _tempTeam in northwestDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                                <div class="area">
+                                    <div class="area-header"><%= southwestDivision[0].Zone %></div>
+                                <%
+                                    bgBoolen = true;
+                                    strHtml = "";
+                                    foreach (Team _tempTeam in southwestDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                                <div class="area areaLine">
+                                    <div class="area-header"><%= southeastDivision[0].Zone %></div>
+                                <%
+                                    bgBoolen = true;
+                                    strHtml = "";
+                                    foreach (Team _tempTeam in southeastDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                                <div class="area">
+                                    <div class="area-header"><%= centralDivision[0].Zone %></div>
+                                <%
+                                    bgBoolen = true;
+                                    strHtml = "";
+                                    foreach (Team _tempTeam in centralDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                                <div class="area">
+                                    <div class="area-header"><%= atlanticDivision[0].Zone %></div>
+                                <%
+                                    bgBoolen = true;
+                                    strHtml = "";
+                                    foreach (Team _tempTeam in atlanticDivision)
+                                    {
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        strHtml += "<span>" + _tempTeam.CName + "</span>";
+                                        strHtml += "</a>";
+                                        bgBoolen = !bgBoolen;
+                                    }
+                                    Response.Write(strHtml);
+                                     %>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $(".nav-tag").mouseenter(function () {
+                        $(this).children("div").show();
+                    }).mouseleave(function () {
+                        $(this).children("div").hide();
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+    <!-- main -->
+    <div class="main">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+    	<div class="footer-main">
+        	<div class="footer-logo"><img src="images/logo.png" alt="nba" /></div>
+            <div class="footer-content">
+            	<div class="footer-link">
+                	<a href="#">其它链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">其它链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">其它链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">其它链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">其它链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                </div>
+                <div class="footer-copyright">版权所有 ©2018 ZZ工作室</div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

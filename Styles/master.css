@@ -1,0 +1,209 @@
+* { margin:0; padding:0;}
+body { font-family:Arial, Microsoft YaHei, "黑体", "宋体", sans-serif; font-size:14px; color:#1a1a1a;}
+img { border:none 0;}
+a:link, a:visited { color:#1a1a1a; text-decoration:none;}
+a:hover, a:active { color:red; text-decoration:none;}
+li { list-style:none;}
+table { width:100%; border-collapse:collapse; border-spacing:0;}
+
+.cb { clear:both;}
+.fl { display:inline; float:left;}
+.fr { display:inline; float:right;}
+.bgEEE { background-color:#eee;}
+.red { color:Red;}
+.hide { display:none;}
+
+/*=== header ===*/
+.top { width:100%; height:200px;}
+.banner { width:100%; height:150px; background:url(../images/top_bg.jpg) no-repeat center 0;}
+.banner-layout { margin:0 auto; width:1200px; height:150px;}
+.logo { display:inline; float:left; margin:19px 0 0 20px; width:244px; height:111px;}
+.nav { width:100%; height:50px; background-color:#19429c;}
+.nav-list { position:relative; margin:0 auto; width:1200px; height:50px;}
+.nav-list-li { display:inline; float:left; width:150px;}
+.nav-list-a { display:block; width:150px; height:50px; font-size:16px; font-weight:bold; line-height:50px; text-align:center;}
+.nav-list-a:link, .nav-list-a:visited, .nav-list-a:hover, .nav-list-a:active { color:white;}
+.teamsList { position:absolute; left:0; top:50px; width:1200px; display:none; z-index:1000;}
+.teamsList-header { height:50px; background-color:#13254d;}
+.teamsList-header div { display:inline; float:left; width:600px; height:50px; font-size:16px; line-height:50px; text-align:center; color:white;}
+.teamsList-main { border:solid 2px #13254d; border-top:none 0; width:1196px; height:440px; background-color:white;}
+.area { display:inline; float:left; width:199px; height:440px;}
+.area-header { height:40px; background-color:#eee; font-size:14px; line-height:40px; text-align:center;}
+.area a { display:block; width:199px; height:80px;}
+.area a div { display:inline; float:left; margin:5px 0 0 30px; width:70px; height:70px;}
+.area a span { float:left; margin-left:10px; line-height:80px;}
+.area_bg { background-color:#eee;}
+.areaLine { border-left:solid 2px #858fa6;}
+
+/*=== footer ===*/
+.footer { margin-top:50px; width:100%; background-color:#13254d;}
+.footer-main { margin:0 auto; width:1200px; height:150px;}
+.footer-logo { display:inline; float:left; margin:19px 0 0 20px; width:244px; height:111px;}
+.footer-content { display:inline; float:left; margin:45px 0 0 30px; line-height:30px; color:white;}
+.footer-link a:link, .footer-link a:visited { color:white;}
+ .footer-link a:hover, .footer-link a:active { color:#a5c1ff;}
+
+.main { margin:0 auto; width:1200px;}
+.calendar { margin-top:50px;}
+.calendar-header { padding-left:20px; width:1180px; height:50px; background-color:#13254d; font-size:14px; font-weight:bold; line-height:50px; color:white;}
+.calendar-list { margin-top:20px; width:1200px; height:228px; overflow:scroll; overflow-y:hidden;}
+.calendar-list-item { display:inline; float:left; margin-left:9px; width:388px;}
+.calendar-list-item th, .calendar-list-item td { font-weight:normal; line-height:24px; text-align:center;}
+.calendar-list-item .today { color:red;}
+.calendar-l-i-header { height:40px; background-color:#99b9ff; line-height:40px; text-align:center;}
+
+.gamelist { margin-top:30px;}
+.gamelist-item-header { border-bottom:solid 1px #1f3566; padding-left:20px; height:30px; background-color:#13254d; font-weight:bold; line-height:30px; color:white;}
+.gamelist-item li { border-bottom:solid 1px #ccc; height:80px; line-height:80px;}
+.gamelist-i-time { display:inline; float:left; padding-left:80px; width:60px; background:url(../images/common.png) no-repeat 10px 0;}
+.gamelist-i-away, .gamelist-i-home { display:inline; float:left; margin-left:30px; width:150px;}
+.gamelist-i-away div, .gamelist-i-home div { display:inline; float:left; margin-top:5px; width:70px; height:70px;}
+.gamelist-i-away div img, .gamelist-i-home div img { width:100%; height:100%;}
+.gamelist-i-away span, .gamelist-i-home span { display:inline; float:left; margin-left:10px; line-height:80px;}
+.gamelist-i-vs { display:inline; float:left; width:100px; height:80px; background:url(../images/common.png) no-repeat 0 -80px;}
+.gamelist-i-result { display:inline; float:left; width:600px; font-size:24px; font-weight:bold; line-height:80px; text-align:center;}
+
+/*
+.teamschedule-header { margin-top:30px; height:80px;}
+.teamlogo div { margin:5px 0 0 20px; width:70px; height:70px;}
+.teamlogo div img { width:100%; height:100%;}
+.teamlogo span { margin-left:10px; font-size:24px; font-weight:bold; line-height:80px;}
+.teamrecord { margin-left:50px; font-size:16px; color:#808080; line-height:75px;}
+.teamrecord span { margin:0 5px; font-size:24px; font-weight:bold;}
+.teamrecord-win { color:red;}
+.teamrecord-lose { color:#00e545;}
+*/
+.teamschedule-header { margin-top:30px; border:solid 1px #19429c; padding:20px; height:262px;}
+.teamlogo { border-right:solid 1px #ddd; padding-right:20px; width:600px; height:260px;}
+.teamlogo-img { width:260px; height:260px; background-color:#eee;}
+.teamlogo-img img { width:100%; height:100%;}
+.teamlogo-info { margin-left:10px;}
+.teamlogo-cname { margin-top:20px; font-size:30px; font-weight:bold;}
+.teamlogo-ename { font-size:24px;}
+.teamrecord { margin-left:20px; width:517px;}
+.teamrecord-table { width:100%; border-collapse:collapse; border-spacing:0; border-top:solid 1px #eee;}
+.teamrecord-table th, .teamrecord-table td { border-bottom:solid 1px #eee; padding:20px 10px; font-weight:normal; text-align:center;}
+.teamrecord-table th { color:#808080;}
+.tsl-item-header { border-bottom:solid 1px #1f3566; padding-left:20px; height:30px; background-color:#13254d; font-weight:bold; line-height:30px; color:white;}
+.tsl-item li { border-bottom:solid 1px #ccc; height:80px; line-height:80px;}
+.tsl-i-date { display:inline; float:left; padding-left:80px; width:100px; background:url(../images/common.png) no-repeat 10px 0;}
+.tsl-i-time { display:inline; float:left; width:60px;}
+.tsl-i-away, .tsl-i-home { display:inline; float:left; margin-left:30px; width:150px;}
+.tsl-i-away div, .tsl-i-home div { display:inline; float:left; margin-top:5px; width:70px; height:70px;}
+.tsl-i-away div img, .tsl-i-home div img { width:100%; height:100%;}
+.tsl-i-away span, .tsl-i-home span { display:inline; float:left; margin-left:10px; line-height:80px;}
+.tsl-i-vs { display:inline; float:left; width:100px; height:80px; background:url(../images/common.png) no-repeat 0 -80px;}
+.tsl-i-result { display:inline; float:left; width:500px; font-size:24px; font-weight:bold; line-height:80px; text-align:center;}
+.tsl-win { background:url(../images/common.png) no-repeat 400px -160px;}
+.tsl-lose { background:url(../images/common.png) no-repeat 400px -240px;}
+
+/*=== index ===*/
+/* 赛程 */
+.todayGame { margin-top:20px; width:1200px; height:100px;}
+.todayGame-date { padding:0 12px 12px; width:106px; height:88px; background-color:#99b9ff;}
+.todayGame-date div { margin-top:12px; height:32px; background-color:#ccdcff; font-weight:bold; line-height:32px; text-align:center;}
+.todayGame-control { margin-left:10px; width:1060px; height:100px;}
+.todayGame-btn { width:30px; height:100px; background-image:url(../images/common.png); background-repeat:no-repeat; cursor:pointer;}
+.tg-left { background-position:0 -320px;}
+.tg-left-un { background-position:-40px -320px;}
+.tg-right { background-position:0 -420px;}
+.tg-right-un { background-position:-40px -420px;}
+.todayGame-list { margin:0 5px; width:990px; height:100px; overflow:hidden;}
+.todayGame-list li { display:inline; float:left; margin-right:10px; border:solid 1px #ccc; padding:0 20px; width:196px; height:98px;}
+.todayGame-list-team { display:inline; float:left; width:50px;}
+.todayGame-list .todayGame-none { display:block; float:none; margin:0; border:none 0; padding:0; width:990px; height:100px; font-size:20px; font-weight:bold; line-height:100px; text-align:center; color:#808080;}
+.tg-l-t-logo { margin-top:11px; width:50px; height:50px;}
+.tg-l-t-logo img { width:100%; height:100%;}
+.todayGame-list-team span { display:block; margin-top:5px; font-size:12px; line-height:20px; text-align:center;}
+.todayGame-list-info { display:inline; float:left; width:96px;}
+.tg-l-i-score, .tg-l-i-time { margin-top:20px; font-size:20px; font-weight:bold; line-height:30px; text-align:center;}
+.tg-l-i-msg { font-size:12px; text-align:center;}
+.tg-l-i-time { color:#808080;}
+/* 焦点图 */
+.layout { margin-top:20px;}
+.layout-left { width:880px;}
+.layout-right { margin-left:20px; width:300px;}
+.focusNews { height:360px;}
+.focus { position:relative; width:480px; height:360px; overflow:hidden;}
+.focus-imgList li { position:relative; display:none; width:480px; height:360px;}
+.focus-img { width:480px; height:360px;}
+.focus-img img { width:100%; height:100%; object-fit:cover;}
+.focus-title { position:absolute; left:0; bottom:0; width:480px; height:60px; background-image:url(../images/focus_bg.png); text-align:center; line-height:40px;}
+.focus-title a:link, .focus-title a:visited { color:White;}
+.focus-title a:hover, .focus-title a:active { color:Red;}
+.focus-tag { position:absolute; left:195px; bottom:10px; height:8px; text-align:center;}
+.focus-tag span { float:left; margin:0 5px; width:8px; height:8px; overflow:hidden; background:url(../images/common.png) no-repeat 0 -526px; line-height:8px; cursor:pointer;}
+.focus-tag .sel { background:url(../images/common.png) no-repeat -10px -526px;}
+/* 新闻动态 */
+.news { margin-left:20px; width:380px; height:360px;}
+.layoutHeader { position:relative; width:100%; height:30px; background:url(../images/common.png) no-repeat 0 -540px;}
+.layoutHeader div { padding-left:10px; height:30px; font-size:18px; font-weight:bold; line-height:30px; color:White;}
+.layoutHeader a { position:absolute; right:10px; top:5px; width:60px; height:20px; background:url(../images/common.png) no-repeat -50px -520px; font-size:12px; line-height:20px; text-align:center;}
+.layoutHeader a:link, .layoutHeader a:visited, .layoutHeader a:hover, .layoutHeader a:active { color:White;}
+.newsList { margin-top:10px;}
+.newsList li { padding-left:25px; height:35px; overflow:hidden; background:url(../images/common.png) no-repeat 0 -23px; line-height:35px;}
+/* 最佳球员 */
+.mvp { margin-top:20px;}
+.mvp-tag { height:42px;}
+.mvp-tag div { display:inline; float:left; padding-bottom:2px; width:440px; height:40px; background:url(../images/common.png) no-repeat -200px -160px; font-size:18px; line-height:40px; text-align:center; cursor:pointer;}
+.mvp-tag div.sel { background-position:-200px -80px; color:White;}
+.mvp-table { width:880px; height:278px; overflow:hidden;}
+.mvp-item { width:880px; height:278px; background:url(../images/mvp_bg.jpg) no-repeat 0 0;}
+.mvp-player { display:inline; float:left; width:440px; height:278px;}
+.mvp-player-photo { display:inline; float:left; margin:55px 0 0 20px; width:200px;}
+.mvpPhoto { width:200px; height:146px;}
+.mvpPhoto img { width:100%;}
+.mvpInfo { margin-top:5px; width:200px; text-align:center;}
+.mvpInfo-name { font-size:16px; line-height:30px;}
+.mvp-player-record { display:inline; float:left; margin:55px 0 0 20px; width:200px;}
+.mvp-score { height:40px; line-height:40px;}
+.mvp-score div { display:inline; float:left; font-size:18px; font-weight:bold;}
+.mvp-score span { float:left; margin-left:15px; font-size:30px; font-weight:bold; color:Red;}
+.mvp-player-single { display:inline; float:left; margin:20px 30px 0 0; width:65px; line-height:28px;}
+.mvp-player-single div { font-size:16px;}
+.mvp-player-single span { display:block; font-size:20px; font-weight:bold; text-align:center;}
+/* 排名 */
+.classification { height:30px;}
+.classification div { display:inline; float:left; width:150px; height:30px; background-color:#99b9ff; text-align:center; line-height:30px; cursor:pointer;}
+.classification .sel { background-color:#19429c; color:White;}
+.conference { height:40px; background-color:#ccdcff;}
+.conference div { display:inline; float:left; margin:0 25px; padding-left:40px; width:60px; height:40px; line-height:40px; cursor:pointer;}
+.conference-west { background:url(../images/common.png) no-repeat -200px -280px;}
+.conference-east { background:url(../images/common.png) no-repeat -350px -280px;}
+.conference-west.sel { background-position:-200px -240px;}
+.conference-east.sel { background-position:-350px -240px;}
+.ranking table { width:100%; border-collapse:collapse; border-spacing:0;}
+.ranking th, .ranking td { line-height:30px; text-align:center;}
+.ranking .tl { text-align:left;}
+.ranking td div { padding:2px; width:26px; height:26px;}
+.ranking img { float:left; width:26px; height:26px;}
+.tableBg_0 { background-color:#e6e6e6;}
+.tableBg_1 { background-color:#e5eeff;}
+.tableBg_2 { background-color:#f2f6ff;}
+.tableLine { border-bottom:solid 1px #99b9ff;}
+.ranking-header { height:30px; background-color:#99b9ff; text-align:center; line-height:30px;}
+/* 数据王 */
+.record { margin-top:20px; height:382px;}
+.record-item { display:inline; float:left; border-right:solid 1px #ccc; padding:0 9px 0 10px; width:220px;}
+.record-header { padding-left:15px; width:65px; height:30px; overflow:hidden; background:url(../images/common.png) no-repeat -200px -320px; color:White; line-height:30px;}
+.record-first { margin-top:20px;}
+.record-first-photo { width:220px; height:160px;}
+.record-first-photo img { width:100%; height:100%; object-fit:cover;}
+.record-first-info { margin-top:10px; height:40px;}
+.record-f-i-name { display:inline; float:left; margin-left:10px; width:140px;}
+.record-f-i-name div { height:20px; overflow:hidden; line-height:20px;}
+.record-f-i-data { display:inline; float:left; margin-right:10px; width:60px; height:40px; font-size:30px; font-weight:bold; line-height:40px; text-align:right; color:Red;}
+.record-list { margin-top:10px; border-top:solid 1px #ccc; padding:10px 0 0; height:40px;}
+.record-list-photo { display:inline; float:left; margin-top:5px; width:41px; height:30px;}
+.record-list-photo img { width:100%; height:100%;}
+.record-list-info { display:inline; float:left; margin-left:5px; width:124px; height:40px; font-size:12px; line-height:20px;}
+.record-list-data { display:inline; float:left; width:40px; height:40px; font-size:20px; font-weight:bold; line-height:40px; text-align:right;}
+/* 精彩时刻 */
+.imgList { width:1200px; overflow:hidden;}
+.imgList ul { width:1220px;}
+.imgList li { position:relative; display:inline; float:left; margin:20px 20px 0 0; width:285px; height:214px;}
+.imgList-img { width:285px; height:214px;}
+.imgList-img img { width:100%; height:100%; object-fit:cover;}
+.imgList-title { position:absolute; left:0; top:0; display:none; width:285px; height:214px;}
+.imgList-title a { display:block; width:265px; height:214px; background:url(../images/imgList_bg.png) no-repeat 0 0; padding:60px 10px 114px; text-align:center;}
+.imgList-title a:link, .imgList-title a:visited, .imgList-title a:hover, .imgList-title a:active { color:White;}
