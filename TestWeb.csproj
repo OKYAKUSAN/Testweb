@@ -193,6 +193,9 @@
     <Compile Include="BLL\TeamsRank.cs" />
     <Compile Include="DAL\GameListXml.cs" />
     <Compile Include="DAL\TeamListXml.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerGameStats.cs" />
+    <Compile Include="Model\PlayerSeasonStats.cs" />
     <Compile Include="schedule.aspx.cs">
       <DependentUpon>schedule.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
