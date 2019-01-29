@@ -7,7 +7,17 @@ namespace TestWeb.Model
 {
     public class PlayerGameStats
     {
-        public string CName { get; set; }
+        public int PlayerId { get; set; }
+        public string FirstName_E { get; set; }
+        public string LastName_E { get; set; }
+        public string FirstName_C { get; set; }
+        public string LastName_C { get; set; }
+        public string Season { get; set; }
+        public DateTime Time { get; set; }
+        public string AwayTeam { get; set; }
+        public string HomeTeam { get; set; }
+        public string Team { get; set; }
+        public int Starter { get; set; }
         public int PlayingTime { get; set; }
         public int Points { get; set; }
         public int Shots { get; set; }
@@ -26,5 +36,6 @@ namespace TestWeb.Model
         public int Assists { get; set; }
         public int Steals { get; set; }
         public int Foul { get; set; }
+        public int Faults { get; set; }
     }
 }

@@ -45,9 +45,9 @@
                                     string strHtml = "";
                                     foreach (Team _tempTeam in pacificDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;
@@ -62,9 +62,9 @@
                                     strHtml = "";
                                     foreach (Team _tempTeam in northwestDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;
@@ -79,9 +79,9 @@
                                     strHtml = "";
                                     foreach (Team _tempTeam in southwestDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;
@@ -96,9 +96,9 @@
                                     strHtml = "";
                                     foreach (Team _tempTeam in southeastDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;
@@ -113,9 +113,9 @@
                                     strHtml = "";
                                     foreach (Team _tempTeam in centralDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;
@@ -130,9 +130,9 @@
                                     strHtml = "";
                                     foreach (Team _tempTeam in atlanticDivision)
                                     {
-                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "'>";
-                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName + "' class='area_bg'>";
-                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName + ".png' alt='" + _tempTeam.EName + "' /></div>";
+                                        if (!bgBoolen) strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "'>";
+                                        else strHtml += "<a href='teamschedule.aspx?team=" + _tempTeam.EName.ToLower() + "' class='area_bg'>";
+                                        strHtml += "<div><img src='images/teams_logo/" + _tempTeam.EName.ToLower() + ".png' alt='" + _tempTeam.EName + "' /></div>";
                                         strHtml += "<span>" + _tempTeam.CName + "</span>";
                                         strHtml += "</a>";
                                         bgBoolen = !bgBoolen;

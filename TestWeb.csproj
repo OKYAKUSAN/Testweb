@@ -189,10 +189,15 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="BLL\GamesList.cs" />
+    <Compile Include="BLL\PlayerBll.cs" />
+    <Compile Include="BLL\TeamBll.cs" />
     <Compile Include="BLL\TeamsGroup.cs" />
     <Compile Include="BLL\TeamsRank.cs" />
     <Compile Include="DAL\GameListXml.cs" />
+    <Compile Include="DAL\PlayerServer.cs" />
     <Compile Include="DAL\TeamListXml.cs" />
+    <Compile Include="DAL\TeamServer.cs" />
+    <Compile Include="Helper\ServerHelper.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\PlayerGameStats.cs" />
     <Compile Include="Model\PlayerSeasonStats.cs" />

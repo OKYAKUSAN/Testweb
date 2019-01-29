@@ -48,13 +48,22 @@ namespace TestWeb
             teamList.Text = text;
              */
 
-            TeamsGroup teamsGroup = new TeamsGroup();
+            //TeamsGroup teamsGroup = new TeamsGroup();
+            TeamBll teamList = new TeamBll();
+            /*
             pacificDivision = teamsGroup.GetGroup("太平洋赛区");
             northwestDivision = teamsGroup.GetGroup("西北赛区");
             southwestDivision = teamsGroup.GetGroup("西南赛区");
             southeastDivision = teamsGroup.GetGroup("东南赛区");
             centralDivision = teamsGroup.GetGroup("中部赛区");
             atlanticDivision = teamsGroup.GetGroup("大西洋赛区");
+             */
+            pacificDivision = teamList.GetPacificTeamList();
+            northwestDivision = teamList.GetNorthwestTeamList();
+            southwestDivision = teamList.GetSouthwestTeamList();
+            southeastDivision = teamList.GetSoutheastTeamList();
+            centralDivision = teamList.GetCentralTeamList();
+            atlanticDivision = teamList.GetAtlanticTeamList();
         }
 
         /*

@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using TestWeb.Model;
 using TestWeb.BLL;
+using TestWeb.DAL;
 
 namespace TestWeb
 {
