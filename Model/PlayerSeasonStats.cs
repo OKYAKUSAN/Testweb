@@ -7,26 +7,32 @@ namespace TestWeb.Model
 {
     public class PlayerSeasonStats
     {
-        public string CName { get; set; }
+        public int PlayerId { get; set; }
+        public string FirstName_E { get; set; }
+        public string LastName_E { get; set; }
+        public string FirstName_C { get; set; }
+        public string LastName_C { get; set; }
         public string Season { get; set; }
-        public int PlayingGames { get; set; }
-        public float PlayingTime { get; set; }
-        public float Points { get; set; }
-        public float Shots { get; set; }
-        public float ShotsHit { get; set; }
+        public string Team { get; set; }
+        public int Starter { get; set; }
+        public int PlayingTime { get; set; }
+        public int Points { get; set; }
+        public int Shots { get; set; }
+        public int ShotsHit { get; set; }
         public float ShotsHitRate { get; set; }
-        public float ThreePoints { get; set; }
-        public float ThreePointsHit { get; set; }
+        public int ThreePoints { get; set; }
+        public int ThreePointsHit { get; set; }
         public float ThreePointsHitRate { get; set; }
-        public float FreeThrow { get; set; }
-        public float FreeThrowHit { get; set; }
+        public int FreeThrow { get; set; }
+        public int FreeThrowHit { get; set; }
         public float FreeThrowHitRate { get; set; }
-        public float Rebound { get; set; }
-        public float OffensiveRebound { get; set; }
-        public float DefensiveRebound { get; set; }
-        public float Block { get; set; }
-        public float Assists { get; set; }
-        public float Steals { get; set; }
-        public float Foul { get; set; }
+        public int Rebound { get; set; }
+        public int OffensiveRebound { get; set; }
+        public int DefensiveRebound { get; set; }
+        public int Block { get; set; }
+        public int Assists { get; set; }
+        public int Steals { get; set; }
+        public int Foul { get; set; }
+        public int Faults { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace TestWeb.DAL
         string cmdStr = "";
 
         /// <summary>
-        /// 获取所有球员列表
+        /// 从数据库获取所有球员列表
         /// </summary>
         /// <returns></returns>
         public List<Player> GetAllPlayerList()
@@ -33,7 +33,7 @@ namespace TestWeb.DAL
         }
 
         /// <summary>
-        /// 获取指定球员信息
+        /// 从数据库获取指定球员信息
         /// </summary>
         /// <param name="id">球员ID</param>
         /// <returns></returns>
@@ -50,7 +50,7 @@ namespace TestWeb.DAL
         }
 
         /// <summary>
-        /// 获取指定球员所有比赛的单场数据
+        /// 从数据库获取指定球员所有比赛的单场数据
         /// </summary>
         /// <param name="id">球员ID</param>
         /// <returns></returns>

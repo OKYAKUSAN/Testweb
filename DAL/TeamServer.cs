@@ -16,7 +16,7 @@ namespace TestWeb.DAL
         string cmdStr = "";
 
         /// <summary>
-        /// 获取所有队伍列表
+        /// 从数据库获取所有队伍列表
         /// </summary>
         /// <returns></returns>
         public List<Team> GetTeamList()
