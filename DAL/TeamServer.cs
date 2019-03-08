@@ -27,6 +27,7 @@ namespace TestWeb.DAL
             foreach (DataRow drTemp in ds.Tables[0].Rows)
             {
                 Team resultTemp = new Team();
+                resultTemp.Id = Int32.Parse(drTemp["ID_T"].ToString());
                 resultTemp.ECity = drTemp["City_E"].ToString();
                 resultTemp.CCity = drTemp["City_C"].ToString();
                 resultTemp.EName = drTemp["Name_E"].ToString();

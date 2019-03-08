@@ -79,7 +79,7 @@ namespace TestWeb.DAL
             packagePlayer.Birthday = DateTime.Parse(dr["Birthday"].ToString());
             packagePlayer.Position = dr["Position"].ToString();
             packagePlayer.PlayingAge = Int32.Parse(dr["PlayingAge"].ToString());
-            packagePlayer.Retire = dr["Retire"].ToString() != null ? DateTime.Parse(dr["Retire"].ToString()) : new DateTime();
+            packagePlayer.Retire = Convert.ToString(dr["Retire"].ToString()) != "" ? DateTime.Parse(dr["Retire"].ToString()) : new DateTime();
             packagePlayer.Photo = dr["Photo"].ToString();
             packagePlayer.Height = float.Parse(dr["Pheight"].ToString());
             packagePlayer.Weight = float.Parse(dr["Pweight"].ToString());
@@ -99,7 +99,7 @@ namespace TestWeb.DAL
             packagePlayerGameStats.AwayTeam = dr["AwayTeam"].ToString();
             packagePlayerGameStats.HomeTeam = dr["HomeTeam"].ToString();
             packagePlayerGameStats.Team = dr["Name_C"].ToString();
-            packagePlayerGameStats.Starter = Int32.Parse(dr["Starter"].ToString());
+            packagePlayerGameStats.Starter = Int32.Parse(dr["Starter"].ToString()) == 1;
             packagePlayerGameStats.PlayingTime = Int32.Parse(dr["PlayingTime"].ToString());
             packagePlayerGameStats.Points = Int32.Parse(dr["Points"].ToString());
             packagePlayerGameStats.Shots = Int32.Parse(dr["Shots"].ToString());

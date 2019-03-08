@@ -15,6 +15,65 @@
             <div>
                 <ul>
                     <%
+                        if (todaygames.Count == 0) Response.Write("<li class='todayGame-none'>今日无比赛</li>");
+                        else
+                        {
+                            foreach (GameModel _tempGameModel in todaygames)
+                            {
+                                if (_tempGameModel.AwayPoints == "-1" || _tempGameModel.HomePoints == "-1")
+                                {
+                         %>
+                        <li>
+                            <div class="todayGame-list-team">
+                                <div class="tg-l-t-logo">
+                                    <% Response.Write("<img src='/images/teams_logo/" + _tempGameModel.Away_E + ".png' alt='' />"); %>
+                                </div>
+                                <span><% Response.Write(_tempGameModel.Away); %></span>
+                            </div>
+                            <div class="todayGame-list-info">
+                                <div class="tg-l-i-time"><% Response.Write(_tempGameModel.Time.ToString("HH:mm")); %></div>
+                                <div class="tg-l-i-msg">未开始</div>
+                            </div>
+                            <div class="todayGame-list-team">
+                                <div class="tg-l-t-logo">
+                                    <% Response.Write("<img src='/images/teams_logo/" + _tempGameModel.Home_E + ".png' alt='' />"); %>
+                                </div>
+                                <span><% Response.Write(_tempGameModel.Home); %></span>
+                            </div>
+                        </li>
+                        <%
+                        }
+                                else
+                                {
+                                     %>
+                        <li>
+                            <div class="todayGame-list-team">
+                                <div class="tg-l-t-logo">
+                                    <% Response.Write("<img src='/images/teams_logo/" + _tempGameModel.Away_E + ".png' alt='' />"); %>
+                                </div>
+                                <span><% Response.Write(_tempGameModel.Away); %></span>
+                            </div>
+                            <div class="todayGame-list-info">
+                                <div class="tg-l-i-score">
+                                    <%
+                        Response.Write(Int32.Parse(_tempGameModel.AwayPoints) > Int32.Parse(_tempGameModel.HomePoints) ? "<span class='red'>" + _tempGameModel.AwayPoints + "</span>-<span>" + _tempGameModel.HomePoints + "</span>" : "<span>" + _tempGameModel.AwayPoints + "</span>-<span class='red'>" + _tempGameModel.HomePoints + "</span>");
+                                     %>
+                                </div>
+                            </div>
+                            <div class="todayGame-list-team">
+                                <div class="tg-l-t-logo">
+                                    <% Response.Write("<img src='/images/teams_logo/" + _tempGameModel.Home_E + ".png' alt='' />"); %>
+                                </div>
+                                <span><% Response.Write(_tempGameModel.Home); %></span>
+                            </div>
+                        </li>
+                        <%
+                        }
+                            }
+                        } %>
+                </ul>
+<%--                <ul>
+                    <%
                         if (todayGames.Count == 0) Response.Write("<li class='todayGame-none'>今日无比赛</li>");
                         else
                         {
@@ -201,7 +260,7 @@
                     </li>
                     -->
                 </ul>
-            </div>
+--%>            </div>
         </div>
         <div class="todayGame-btn tg-right fl"></div>
     </div>

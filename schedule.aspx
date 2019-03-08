@@ -17,7 +17,7 @@
 
     <!-- gamelist -->
     <div class="gamelist">
-        <asp:Literal ID="gameList" runat="server" />
+        <asp:Literal ID="GameList" runat="server" />
     </div>
     <script type="text/javascript">
         $(function () {

@@ -28,5 +28,34 @@ namespace TestWeb.Helper
             conn.Close();
             return resultDs;
         }
+
+        /// <summary>
+        /// 增、删、改操作并返回第一行第一列
+        /// </summary>
+        /// <param name="cmdStr">Transact-SQL语句</param>
+        /// <returns>-1表示数据已存在</returns>
+        public static int ExecuteScalar(string cmdStr)
+        {
+            cmd.CommandText = cmdStr;
+            conn.Open();
+            object result = cmd.ExecuteScalar();
+            conn.Close();
+            int id = Convert.ToString(result) != "" ? Convert.ToInt32(result) : -1;
+            return id;
+        }
+
+        /// <summary>
+        /// 增、删、改操作并返回影响行数
+        /// </summary>
+        /// <param name="cmdStr">Transact-SQL语句</param>
+        /// <returns></returns>
+        public static int ExecuteNonQuery(string cmdStr)
+        {
+            cmd.CommandText = cmdStr;
+            conn.Open();
+            int rows = cmd.ExecuteNonQuery();
+            conn.Close();
+            return rows;
+        }
     }
 }

@@ -207,3 +207,39 @@ table { width:100%; border-collapse:collapse; border-spacing:0;}
 .imgList-title { position:absolute; left:0; top:0; display:none; width:285px; height:214px;}
 .imgList-title a { display:block; width:265px; height:214px; background:url(../images/imgList_bg.png) no-repeat 0 0; padding:60px 10px 114px; text-align:center;}
 .imgList-title a:link, .imgList-title a:visited, .imgList-title a:hover, .imgList-title a:active { color:White;}
+
+/*=== Admin ===*/
+.formTable { margin-top:20px; border-bottom:solid 3px #ccc;}
+.formItems { border-top:solid 1px #e0e0e0; height:50px;}
+.formHeader { display:inline; float:left; width:150px; height:50px; font-weight:bold; line-height:50px; text-align:right;}
+.formControl { display:inline; float:left; margin-left:50px; width:600px; height:50px;}
+.formMsg { display:none; float:left; height:50px; height:50px; line-height:50px; color:Red;}
+.gameDate div { display:inline; float:left; margin-right:10px; width:85px; height:50px; line-height:50px;}
+.gameDate select { margin-top:10px; width:65px; height:30px; outline:none;}
+#gameSeason { float:left; margin:10px 10px 0 0; border:solid 1px #ccc; padding:0 10px; width:300px; height:28px; line-height:28px;}
+.gameSeason div { display:inline; float:left; line-height:50px;}
+.gameTeam div { display:inline; float:left; margin-right:30px;}
+.gameTeam span { float:left; margin-right:10px; line-height:50px;}
+.gameTeam select { float:left; margin-top:10px; width:80px; height:30px; outline:none;}
+.gameTeam .red { line-height:50px;}
+.gameSubmit input { margin-top:10px; border:none 0; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; width:100px; height:30px; background-color:Orange; color:White; cursor:pointer;}
+.gameManageBtn { margin-top:20px; height:30px;}
+.gameManageBtn a { float:left; margin-top:10px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:0 25px; height:25px; background-color:Orange; line-height:25px; text-align:center; color:White;}
+.gameManageBtn a:link, .gameManageBtn a:visited, .gameManageBtn a:hover, .gameManageBtn a:active { color:White;}
+.gameList { margin-top:10px;}
+.gameList table { width:100%; border-collapse:collapse; border-spacing:0;}
+.gameList tr { border-bottom:solid 1px #ccc;}
+.gameList th, .gameList td { padding:5px 0; line-height:30px; text-align:center;}
+/* GameSend */
+.sendMsg { margin:0 auto; border:solid 1px #99b9ff; width:370px; height:100px; background-color:#ccdcff;}
+.sendMsg-text { margin-top:10px; height:40px; line-height:40px; text-align:center;}
+.sendMsg-notice { height:40px; line-height:40px; text-align:center;}
+.sendMsg-notice a:link, .sendMsg-notice a:visited { color:Blue; text-decoration:underline;}
+.sendMsg-notice a:hover, .sendMsg-notice a:active { color:Red; text-decoration:underline;}
+
+
+/*=== 页码 ===*/
+.pageNum { margin-top:30px; width:100%; text-align:center;}
+.pageNum a { display:inline-block; margin:0 2px; border:solid 1px #ccc; padding:0 5px; line-height:25px;}
+.pageNum span { display:inline-block; margin:0 2px; line-height:27px;}
+.pageNum .unable { border:solid 1px #ccc; padding:0 5px; line-height:25px; color:#808080;}

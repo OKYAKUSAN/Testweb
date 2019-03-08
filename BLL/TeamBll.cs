@@ -137,5 +137,35 @@ namespace TestWeb.BLL
             }
             return returnList;
         }
+
+        /// <summary>
+        /// 获取某一支队伍
+        /// </summary>
+        /// <param name="id">队伍ID</param>
+        /// <returns></returns>
+        public Team GetSingleTeam(int id)
+        {
+            Team returnTeam = new Team();
+            foreach (Team tempTeam in allTeam)
+            {
+                if (tempTeam.Id == id) returnTeam = tempTeam;
+            }
+            return returnTeam;
+        }
+
+        /// <summary>
+        /// 获取某一对队伍
+        /// </summary>
+        /// <param name="teamName">队伍名称</param>
+        /// <returns></returns>
+        public Team GetSingleTeam(string teamName)
+        {
+            Team returnTeam = new Team();
+            foreach (Team tempTeam in allTeam)
+            {
+                if (tempTeam.EName.ToLower() == teamName) returnTeam = tempTeam;
+            }
+            return returnTeam;
+        }
     }
 }

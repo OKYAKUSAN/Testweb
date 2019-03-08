@@ -7,6 +7,7 @@ namespace TestWeb.Model
 {
     public class Team
     {
+        public int Id { get; set; }
         public string ECity { get; set; }
         public string CCity { get; set; }
         public string EName { get; set; }

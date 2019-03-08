@@ -55,12 +55,30 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Frame\bottom.html" />
+    <Content Include="Admin\Frame\left.aspx" />
+    <Content Include="Admin\Frame\top.aspx" />
+    <Content Include="Admin\GameDelete.aspx" />
+    <Content Include="Admin\GameEdit.aspx" />
+    <Content Include="Admin\GameManagement.aspx" />
+    <Content Include="Admin\GameManagements\GameDelete.aspx" />
+    <Content Include="Admin\GameManagements\GameEdit.aspx" />
+    <Content Include="Admin\GameManagements\GameList.aspx" />
+    <Content Include="Admin\GameManagements\GameSend.aspx" />
+    <Content Include="Admin\GameManagements\GameStats.aspx" />
+    <Content Include="Admin\GameSend.aspx" />
+    <Content Include="Admin\index.aspx" />
+    <Content Include="images\admin\admin_common.png" />
+    <Content Include="images\admin\admin_logo.png" />
+    <Content Include="images\admin\listTable_header_bg.png" />
     <Content Include="images\focus_bg.png" />
     <Content Include="images\imgList_bg.png" />
     <Content Include="images\mvp_bg.jpg" />
     <Content Include="images\player\201935.png" />
     <Content Include="index.aspx" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Styles\admin_master.css" />
     <Content Include="teamschedule.aspx" />
     <Content Include="temp\temp_0.jpg" />
     <Content Include="xml\gameList.xml">
@@ -188,16 +206,112 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frame\left.aspx.cs">
+      <DependentUpon>left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frame\left.aspx.designer.cs">
+      <DependentUpon>left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frame\top.aspx.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frame\top.aspx.designer.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameDelete.aspx.cs">
+      <DependentUpon>GameDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameDelete.aspx.designer.cs">
+      <DependentUpon>GameDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameEdit.aspx.cs">
+      <DependentUpon>GameEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameEdit.aspx.designer.cs">
+      <DependentUpon>GameEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagement.aspx.cs">
+      <DependentUpon>GameManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagement.aspx.designer.cs">
+      <DependentUpon>GameManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameDelete.aspx.cs">
+      <DependentUpon>GameDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameDelete.aspx.designer.cs">
+      <DependentUpon>GameDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameEdit.aspx.cs">
+      <DependentUpon>GameEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameEdit.aspx.designer.cs">
+      <DependentUpon>GameEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameList.aspx.cs">
+      <DependentUpon>GameList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameList.aspx.designer.cs">
+      <DependentUpon>GameList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameSend.aspx.cs">
+      <DependentUpon>GameSend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameSend.aspx.designer.cs">
+      <DependentUpon>GameSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStats.aspx.cs">
+      <DependentUpon>GameStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStats.aspx.designer.cs">
+      <DependentUpon>GameStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameSend.aspx.cs">
+      <DependentUpon>GameSend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameSend.aspx.designer.cs">
+      <DependentUpon>GameSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\GameBll.cs" />
     <Compile Include="BLL\GamesList.cs" />
     <Compile Include="BLL\PlayerBll.cs" />
     <Compile Include="BLL\TeamBll.cs" />
     <Compile Include="BLL\TeamsGroup.cs" />
     <Compile Include="BLL\TeamsRank.cs" />
     <Compile Include="DAL\GameListXml.cs" />
+    <Compile Include="DAL\GameServer.cs" />
     <Compile Include="DAL\PlayerServer.cs" />
     <Compile Include="DAL\TeamListXml.cs" />
     <Compile Include="DAL\TeamServer.cs" />
+    <Compile Include="Helper\HtmlHelper.cs" />
+    <Compile Include="Helper\PackageHelper.cs" />
     <Compile Include="Helper\ServerHelper.cs" />
+    <Compile Include="Model\GameModel.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\PlayerGameStats.cs" />
     <Compile Include="Model\PlayerSeasonStats.cs" />

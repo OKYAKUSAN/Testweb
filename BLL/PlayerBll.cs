@@ -27,6 +27,15 @@ namespace TestWeb.BLL
         }
 
         /// <summary>
+        /// 获取球员总数
+        /// </summary>
+        /// <returns></returns>
+        public int GetPlayerCount()
+        {
+            return allPlayer.Count;
+        }
+
+        /// <summary>
         /// 获取指定球员信息
         /// </summary>
         /// <param name="id">球员ID</param>
@@ -88,7 +97,7 @@ namespace TestWeb.BLL
                 if (statsList[i].PlayingTime > 0)
                 {
                     games++;
-                    starter += statsList[i].Starter;
+                    starter = statsList[i].Starter ? ++starter : starter;
                     playingGame += statsList[i].PlayingTime;
                     points += statsList[i].Points;
                     shots += statsList[i].Shots;

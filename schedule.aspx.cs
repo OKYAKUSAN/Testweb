@@ -65,38 +65,13 @@ namespace TestWeb
 
             // gameList
             /*
-            XmlTextReader gameListXml = new XmlTextReader("xml/gameList.xml");
-            string testGame = "";
-            while (gameListXml.Read())
-            {
-                testGame += gameListXml.GetAttribute("year");
-            }
-            gameList.Text = testGame;
-            */
             GamesList allGameList = new GamesList();
             List<Game> gameListObj = allGameList.GetAllList();
-            /*
-            XmlDocument gameListXml = new XmlDocument();
-            gameListXml.Load(Server.MapPath("xml/gameList.xml"));
-            XmlNodeList gameL = gameListXml.GetElementsByTagName("game");
-            Game[] gameListObj = new Game[gameL.Count];
-            for (int m = 0; m < gameL.Count; m++)
-            {
-                gameListObj[m] = new Game();
-                gameListObj[m].DateYear = Int32.Parse(gameL[m].Attributes[0].Value);
-                gameListObj[m].DateMonth = Int32.Parse(gameL[m].Attributes[1].Value);
-                gameListObj[m].DateDay = Int32.Parse(gameL[m].Attributes[2].Value);
-                gameListObj[m].Time = gameL[m].ChildNodes[0].InnerText;
-                gameListObj[m].Away = gameL[m].ChildNodes[1].InnerText;
-                gameListObj[m].AwayEName = gameL[m].ChildNodes[1].Attributes["eName"].Value;
-                gameListObj[m].Home = gameL[m].ChildNodes[2].InnerText;
-                gameListObj[m].HomeEName = gameL[m].ChildNodes[2].Attributes["eName"].Value;
-                gameListObj[m].Result = gameL[m].ChildNodes[3].InnerText;
-            }
-             * */
             int year = DateTime.Now.Year;
             int month = DateTime.Now.Month;
             int day = DateTime.Now.Day;
+            year = 2018;
+            month = 11;
             int prevYear = year;
             int prevMonth = month;
             int prevDay = 0;
@@ -104,7 +79,6 @@ namespace TestWeb
             int nextMonth = month;
             int nextDay = 0;
             string html = "";
-            //gameList.Text = gameL[1].Attributes[1].Name;
             for (int i = 0; i < gameListObj.Count; i++)
             {
                 if (month == gameListObj[i].DateMonth && year == gameListObj[i].DateYear)
@@ -139,7 +113,33 @@ namespace TestWeb
                     prevDay = gameListObj[i].DateDay;
                 }
             }
-            gameList.Text = html;
+            GameList.Text = html;
+             */ 
+
+            GameBll gb = new GameBll();
+            List<GameModel> gameList = gb.GetGameList();
+            DateTime prevDate = new DateTime();
+            string html = "";
+            for (int i = 0; i < gameList.Count; i++)
+            {
+                if (gameList[i].Time.Year != prevDate.Year || gameList[i].Time.Month != prevDate.Month || gameList[i].Time.Day != prevDate.Day)
+                {
+                    html += "<div class='gamelist-item'><div class='gamelist-item-header'>" + gameList[i].Time.Month.ToString() + "月" + gameList[i].Time.Day + "日</div><ul>";
+                }
+                html += "<li>";
+                html += "<div class='gamelist-i-time'>" + gameList[i].Time.ToString("HH:mm") + "</div>";
+                html += "<div class='gamelist-i-away'><div><img src='images/teams_logo/" + gameList[i].Away_E.ToLower() + ".png' /></div><span>" + gameList[i].Away + "</span></div>";
+                html += "<div class='gamelist-i-vs'></div>";
+                html += "<div class='gamelist-i-home'><div><img src='images/teams_logo/" + gameList[i].Home_E.ToLower() + ".png' /></div><span>" + gameList[i].Home + "</span></div>";
+                html += "<div class='gamelist-i-result'>" + (gameList[i].AwayPoints == "-1" || gameList[i].HomePoints == "-1" ? "未开始" : gameList[i].AwayPoints + "-" + gameList[i].HomePoints) + "</div>";
+                html += "</li>";
+                if (i == gameList.Count - 1 || (gameList[i + 1].Time.Year != gameList[i].Time.Year || gameList[i + 1].Time.Month != gameList[i].Time.Month || gameList[i + 1].Time.Day != gameList[i].Time.Day))
+                {
+                    html += "</ul></div>";
+                }
+                prevDate = DateTime.Parse(gameList[i].Time.Year.ToString() + "-" + gameList[i].Time.Month.ToString() + "-" + gameList[i].Time.Day.ToString());
+            }
+            GameList.Text = html;
         }
     }
 }

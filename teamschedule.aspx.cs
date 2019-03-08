@@ -14,7 +14,8 @@ namespace TestWeb
     public partial class teamschedule : System.Web.UI.Page
     {
         protected Team currentTeam = new Team();
-        protected List<Game> currentList = new List<Game>();
+        //protected List<Game> currentList = new List<Game>();
+        protected List<GameModel> currentList = new List<GameModel>();
         protected int winTotal = 0;
         protected int winHome = 0;
         protected int winAway = 0;
@@ -26,7 +27,7 @@ namespace TestWeb
             string urlTeam="";
             if (Request.QueryString["team"] != null) urlTeam = Request.QueryString["team"].ToString();
             else urlTeam = "warriors";
-
+            /*
             TeamsRank rankList = new TeamsRank();
             TeamRanking teamRank = rankList.GetTeamRank(urlTeam);
             GamesList allGameList = new GamesList();
@@ -40,98 +41,53 @@ namespace TestWeb
             loseHome = teamRank.LoseHome;
             loseAway = teamRank.LoseAway;
             currentTeam = teamGroup.GetTeam(urlTeam);
-            /*
-            XmlDocument teamListXml = new XmlDocument();
-            teamListXml.Load(Server.MapPath("xml/teamList.xml"));
-            XmlNodeList teams = teamListXml.GetElementsByTagName("team");
+             */ 
 
-            for (int i = 0; i < teams.Count; i++)
+            TeamBll tb = new TeamBll();
+            GameBll gb = new GameBll();
+            currentTeam = tb.GetSingleTeam(urlTeam);
+            currentList = gb.GetGameListSingleTeam(currentTeam.Id);
+            winTotal = gb.WinTotal;
+            winHome = gb.WinHome;
+            winAway = gb.WinAway;
+            loseTotal = gb.LoseTotal;
+            loseHome = gb.LoseHome;
+            loseAway = gb.LoseAway;
+
+            DateTime prevTime = new DateTime();
+            string html = "";
+            for (int i = 0; i < currentList.Count; i++)
             {
-                if (teams[i].ChildNodes[2].InnerText == urlTeam)
+                if (currentList[i].Time.Month != prevTime.Month || currentList[i].Time.Year != prevTime.Year)
                 {
-                    currentTeam.ECity = teams[i].ChildNodes[0].InnerText;
-                    currentTeam.CCity = teams[i].ChildNodes[1].InnerText;
-                    currentTeam.EName = teams[i].ChildNodes[2].InnerText;
-                    currentTeam.CName = teams[i].ChildNodes[3].InnerText;
-                    break;
+                    html += "<div class='tsl-item'><div class='tsl-item-header'>" + currentList[i].Time.Year.ToString() + "年" + currentList[i].Time.Month.ToString() + "月</div><ul>";
                 }
-            }
-            Page.Title = currentTeam.CName + " 赛程";
-
-            XmlDocument gameListXml = new XmlDocument();
-            gameListXml.Load(Server.MapPath("xml/gameList.xml"));
-            XmlNodeList games = gameListXml.GetElementsByTagName("game");
-            for (int j = 0; j < games.Count; j++)
-            {
-                if (games[j].ChildNodes[1].Attributes["eName"].Value == urlTeam || games[j].ChildNodes[2].Attributes["eName"].Value == urlTeam)
+                html += "<li>";
+                html += "<div class='tsl-i-date'>" + currentList[i].Time.Month.ToString() + "月" + currentList[i].Time.Day.ToString() + "日</div>";
+                html += "<div class='tsl-i-time'>" + currentList[i].Time.ToString("HH:mm") + "</div>";
+                html += "<div class='tsl-i-away'><div><img src='images/teams_logo/" + currentList[i].Away_E.ToLower() + ".png' /></div><span>" + currentList[i].Away + "</span></div>";
+                html += "<div class='tsl-i-vs'></div>";
+                html += "<div class='tsl-i-home'><div><img src='images/teams_logo/" + currentList[i].Home_E.ToLower() + ".png' /></div><span>" + currentList[i].Home + "</span></div>";
+                if (currentList[i].AwayPoints == "-1" || currentList[i].HomePoints == "-1") html += "<div class='tsl-i-result'>未开始</div>";
+                else
                 {
-                    Game tempGame = new Game();
-                    tempGame.DateYear = Int32.Parse(games[j].Attributes[0].Value);
-                    tempGame.DateMonth = Int32.Parse(games[j].Attributes[1].Value);
-                    tempGame.DateDay = Int32.Parse(games[j].Attributes[2].Value);
-                    tempGame.Time = games[j].ChildNodes[0].InnerText;
-                    tempGame.Away = games[j].ChildNodes[1].InnerText;
-                    tempGame.AwayEName = games[j].ChildNodes[1].Attributes["eName"].Value;
-                    tempGame.Home = games[j].ChildNodes[2].InnerText;
-                    tempGame.HomeEName = games[j].ChildNodes[2].Attributes["eName"].Value;
-                    tempGame.Result = games[j].ChildNodes[3].InnerText;
-                    currentList.Add(tempGame);
-                }
-            }
-
-            for (int k = 0; k < currentList.Count; k++)
-            {
-                //isWinAt((Game)currentList[k], urlTeam);
-                Game tempGame = new Game();
-                tempGame = (Game)currentList[k];
-                if (tempGame.Result.IndexOf("-") >= 0)
-                {
-                    String[] _result = tempGame.Result.Split('-');
-                    int _awayScore = Int32.Parse(_result[0]);
-                    int _homeScore = Int32.Parse(_result[1]);
-                    if (tempGame.AwayEName == urlTeam)
+                    if (currentList[i].Away_ID == currentTeam.Id)
                     {
-                        if (_awayScore < _homeScore)
-                        {
-                            loseTotal++;
-                            loseAway++;
-                        }
-                        else
-                        {
-                            winTotal++;
-                            winAway++;
-                        }
+                        html += Int32.Parse(currentList[i].AwayPoints) < Int32.Parse(currentList[i].HomePoints) ? "<div class='tsl-i-result tsl-lose'>" + currentList[i].AwayPoints + "-" + currentList[i].HomePoints + "</div>" : "<div class='tsl-i-result tsl-win'>" + currentList[i].AwayPoints + "-" + currentList[i].HomePoints + "</div>";
                     }
-                    else
+                    else if (currentList[i].Home_ID == currentTeam.Id)
                     {
-                        if (_awayScore < _homeScore)
-                        {
-                            winTotal++;
-                            winHome++;
-                        }
-                        else
-                        {
-                            loseTotal++;
-                            loseHome++;
-                        }
+                        html += Int32.Parse(currentList[i].AwayPoints) < Int32.Parse(currentList[i].HomePoints) ? "<div class='tsl-i-result tsl-win'>" + currentList[i].AwayPoints + "-" + currentList[i].HomePoints + "</div>" : "<div class='tsl-i-result tsl-lose'>" + currentList[i].AwayPoints + "-" + currentList[i].HomePoints + "</div>";
                     }
                 }
-            }
-             */
-        }
-        /*
-        protected static void isWinAt(Game g,string teamName)
-        {
-            String[] _result = g.Result.Split('-');
-            int _awayScore = Int32.Parse(_result[0]);
-            int _homeScore = Int32.Parse(_result[1]);
-            if (g.Away == teamName)
-            {
-                if (_awayScore < _homeScore)
+                html += "</li>";
+                if (i == currentList.Count - 1 || (currentList[i + 1].Time.Month != currentList[i].Time.Month || currentList[i + 1].Time.Year != currentList[i].Time.Year))
                 {
+                    html += "</ul></div>";
                 }
+                prevTime = DateTime.Parse(currentList[i].Time.ToString("d"));
             }
+            TeamGameList.Text = html;
         }
-         */
     }
 }

@@ -15,8 +15,8 @@
                 %>
             </div>
             <div class="teamlogo-info fl">
-                <div class="teamlogo-cname"><%= currentTeam.CName %></div>
-                <div class="teamlogo-ename"><%= currentTeam.EName %></div>
+                <div class="teamlogo-cname"><%= currentTeam.CCity + "&nbsp;&nbsp;&nbsp;&nbsp;" + currentTeam.CName%></div>
+                <div class="teamlogo-ename"><%= currentTeam.ECity + "&nbsp;&nbsp;&nbsp;&nbsp;" + currentTeam.EName%></div>
             </div>
         </div>
         <div class="teamrecord fl">
@@ -85,7 +85,7 @@
     </div>
 
     <!-- gamelist -->
-    <div class="teamschedulelist">
+    <%--<div class="teamschedulelist">
         <%
             int prevYear = 0;
             int prevMonth = 0;
@@ -152,5 +152,9 @@
                 }
             }
         %>
+    </div>--%>
+
+    <div class="teamschedulelist">
+        <asp:Literal ID="TeamGameList" runat="server"></asp:Literal>
     </div>
 </asp:Content>
