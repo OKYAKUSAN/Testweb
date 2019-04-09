@@ -6,6 +6,7 @@ a:hover, a:active { color:red; text-decoration:none;}
 li { list-style:none;}
 table { width:100%; border-collapse:collapse; border-spacing:0;}
 
+.hide { display:none;}
 .mt10 { margin-top:10px;}
 .p10 { padding:10px;}
 .p20 { padding:20px;}
@@ -68,16 +69,41 @@ table { width:100%; border-collapse:collapse; border-spacing:0;}
 */
 .formTable { width:100%; border-collapse:collapse; border-spacing:0;}
 .formTable th, .formTable td { border:solid 1px #99adc9; padding:5px 10px; line-height:25px;}
-.formList { height:25px;}
+.formList { min-height:25px;}
+.formList::before { display:block; clear:both; content:"";}
+.formList::after { display:block; clear:both; content:"";}
 .formItem { float:left; min-width:600px; height:25px;}
 .formItem-select { float:left; margin-right:10px;}
 .formItem-select select { float:left; width:80px; height:25px; outline:none;}
 .formItem-select span { float:left; margin-left:5px; line-height:25px;}
 .formMsg { display:none; float:left; line-height:25px; color:Red;}
 .formItem-text input { border:solid 1px #cccccc; width:220px; padding:0 5px; height:23px; line-height:23px; outline:none;}
-#gameSubmit { border:solid 1px #7fcaff; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; width:60px; height:25px; background-color:#ddebff; color:#0077cb; cursor:pointer;}
+/*
+.formItem::before { clear:both; content:"";}
+.formItem::after { clear:both; content:"";}
+*/
+.formItem-statsText { float:left; margin:5px 20px 0 0;}
+.formItem-statsText label { line-height:25px;}
+.formItem-statsText input { margin-left:5px; border:solid 1px #cccccc; padding:0 5px; width:30px; height:23px; line-height:23px; text-align:center; outline:none;}
+.formItem-checkbox { float:left;}
+.formItem-checkbox input { height:25px; outline:none;}
+.gameStatsData { width:600px; height:auto;}
+#gameSubmit { margin-right:10px; border:solid 1px #7fcaff; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; width:60px; height:25px; background-color:#ddebff; color:#0077cb; cursor:pointer;}
+.formTableBtn input { margin-right:10px; border:solid 1px #7fcaff; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; width:60px; height:25px; background-color:#ddebff; color:#0077cb; cursor:pointer; outline:none;}
 .sendMsg { margin:0 auto; border:solid 1px #99b9ff; width:370px; height:100px; background-color:#ccdcff;}
 .sendMsg-text { margin-top:10px; height:40px; line-height:40px; text-align:center;}
 .sendMsg-notice { height:40px; line-height:40px; text-align:center;}
 .sendMsg-notice a:link, .sendMsg-notice a:visited { color:Blue; text-decoration:underline;}
 .sendMsg-notice a:hover, .sendMsg-notice a:active { color:Red; text-decoration:underline;}
+
+/*=== fixedPlayerList ===*/
+.fixedBox { position:fixed; left:0; top:0; border:solid 1px #2a92db; padding:10px; width:620px; height:300px; background-color:#ddebff;}
+.fixedBox-main { background-color:White; width:620px; height:300px;}
+.fixedPlayerList-word { border-bottom:solid 1px #ddebff; height:20px;}
+.fixedPlayerList-word span { float:left; margin-left:5px; padding:0 5px; height:20px; line-height:20px; cursor:pointer;}
+.fixedPlayerList-word .sel { background-color:#ddebff;}
+.fixedPlayerList-list { width:620px; height:279px; overflow:auto;}
+.fixedPlayerList-item { display:none;}
+.fixedPlayerList-item ul::before, fixedPlayerList-item ul::after { display:block; clear:both; content:"";}
+.fixedPlayerList-item li { float:left; margin-top:10px; padding-left:20px; width:180px; height:36px; overflow:hidden; line-height:18px; cursor:pointer;}
+.fixedPlayerList-item li:hover { background-color:#ddebff;}

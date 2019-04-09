@@ -67,6 +67,8 @@
     <Content Include="Admin\GameManagements\GameList.aspx" />
     <Content Include="Admin\GameManagements\GameSend.aspx" />
     <Content Include="Admin\GameManagements\GameStats.aspx" />
+    <Content Include="Admin\GameManagements\GameStatsEdit.aspx" />
+    <Content Include="Admin\GameManagements\GameStatsSend.aspx" />
     <Content Include="Admin\GameSend.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="images\admin\admin_common.png" />
@@ -78,6 +80,7 @@
     <Content Include="images\player\201935.png" />
     <Content Include="index.aspx" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\stopPropagation.js" />
     <Content Include="Styles\admin_master.css" />
     <Content Include="teamschedule.aspx" />
     <Content Include="temp\temp_0.jpg" />
@@ -282,6 +285,20 @@
     </Compile>
     <Compile Include="Admin\GameManagements\GameStats.aspx.designer.cs">
       <DependentUpon>GameStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStatsEdit.aspx.cs">
+      <DependentUpon>GameStatsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStatsEdit.aspx.designer.cs">
+      <DependentUpon>GameStatsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStatsSend.aspx.cs">
+      <DependentUpon>GameStatsSend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GameManagements\GameStatsSend.aspx.designer.cs">
+      <DependentUpon>GameStatsSend.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GameSend.aspx.cs">
       <DependentUpon>GameSend.aspx</DependentUpon>

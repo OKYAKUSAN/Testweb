@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div class="p30">
         <div class="breadCrumb"><a href="/Admin/Default.aspx" target="rightFrame">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="/Admin/GameManagements/GameList.aspx" target="rightFrame">比赛时间</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<span>比赛数据</span></div>
-        <div class="moreLink"><a href="/Admin/GameManagements/GameEdit.aspx" target="rightFrame">添加数据</a></div>
+        <div class="moreLink"><!--<a href="/Admin/GameManagements/GameStatsEdit.aspx" target="rightFrame">添加数据</a>--><asp:Literal ID="GameStatsEditLink" runat="server"></asp:Literal></div>
         <div class="listTable">
             <div class="listTable-header"><asp:Literal ID="AwayTableHeader" runat="server"></asp:Literal></div>
             <table>

@@ -10,60 +10,78 @@
 namespace TestWeb.Admin.GameManagements {
     
     
-    public partial class GameStats {
+    public partial class GameStatsEdit {
         
         /// <summary>
-        /// form1 控件。
+        /// GameStatsId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal GameStatsId;
         
         /// <summary>
-        /// GameStatsEditLink 控件。
+        /// AwayId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal GameStatsEditLink;
+        protected global::System.Web.UI.WebControls.Literal AwayId;
         
         /// <summary>
-        /// AwayTableHeader 控件。
+        /// HomeId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal AwayTableHeader;
+        protected global::System.Web.UI.WebControls.Literal HomeId;
         
         /// <summary>
-        /// AwayTable 控件。
+        /// GameStatsLink 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal AwayTable;
+        protected global::System.Web.UI.WebControls.Literal GameStatsLink;
         
         /// <summary>
-        /// HomeTableHeader 控件。
+        /// GameListEdit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal HomeTableHeader;
+        protected global::System.Web.UI.WebControls.Label GameListEdit;
         
         /// <summary>
-        /// HomeTable 控件。
+        /// GameTeam 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal HomeTable;
+        protected global::System.Web.UI.WebControls.Literal GameTeam;
+        
+        /// <summary>
+        /// BackBtn 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal BackBtn;
+        
+        /// <summary>
+        /// PlayerList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal PlayerList;
     }
 }

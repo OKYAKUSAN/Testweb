@@ -115,6 +115,11 @@ namespace TestWeb.BLL
             get { return loseHome; }
         }
 
+        /// <summary>
+        /// 查询指定比赛的比分结果
+        /// </summary>
+        /// <param name="id">比赛ID</param>
+        /// <returns></returns>
         public GameModel GetSingleGame(int id)
         {
             return gameServer.GetSingleGame(id);
@@ -169,6 +174,33 @@ namespace TestWeb.BLL
         public List<PlayerGameStats> GetPlayerGameStats(int id)
         {
             return gameServer.GetPlayerGameStats(id);
+        }
+
+        /// <summary>
+        /// 获取某一条球员比赛数据
+        /// </summary>
+        /// <param name="id">数据ID</param>
+        /// <returns></returns>
+        public PlayerGameStats GetPlayerGameStatsSingle(int id)
+        {
+            return gameServer.GetPlayerGameStatsSingle(id);
+        }
+
+        /// <summary>
+        /// 新增一条球员比赛数据
+        /// </summary>
+        /// <param name="str">球员数据字符串</param>
+        /// <param name="gameId">比赛ID</param>
+        /// <param name="playerId">球员ID</param>
+        /// <returns></returns>
+        public int InsertGamePlayerStats(PlayerGameStats pgs)
+        {
+            return gameServer.InsertGamePlayerStats(pgs);
+        }
+
+        public int UpdateGamePlayerStats(PlayerGameStats pgs)
+        {
+            return gameServer.UpdateGamePlayerStats(pgs);
         }
     }
 }

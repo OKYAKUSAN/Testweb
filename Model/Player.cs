@@ -8,6 +8,7 @@ namespace TestWeb.Model
     public class Player
     {
         public int Id { get; set; }
+        public int Tm_Id { get; set; }
         public string FirstName_E { get; set; }
         public string LastName_E { get; set; }
         public string FirstName_C { get; set; }

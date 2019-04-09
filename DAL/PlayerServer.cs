@@ -20,7 +20,8 @@ namespace TestWeb.DAL
         /// <returns></returns>
         public List<Player> GetAllPlayerList()
         {
-            cmdStr = "select * from Player order by LastName_E";
+            cmdStr = "";
+            cmdStr += "select * from Player order by LastName_E";
             DataSet resultList = ServerHelper.GetQueryResultList(cmdStr);
             List<Player> playerList = new List<Player>();
             foreach (DataRow dr in resultList.Tables[0].Rows)
@@ -39,7 +40,8 @@ namespace TestWeb.DAL
         /// <returns></returns>
         public Player GetPlayer(int id)
         {
-            cmdStr = "select * from Player where ID_P=" + id.ToString();
+            cmdStr = "";
+            cmdStr += "select * from Player where ID_P=" + id.ToString();
             DataSet resultPlayer = ServerHelper.GetQueryResultList(cmdStr);
             Player tempPlayer = new Player();
             foreach (DataRow dr in resultPlayer.Tables[0].Rows)
@@ -49,6 +51,12 @@ namespace TestWeb.DAL
             return tempPlayer;
         }
 
+        public void GetAllTeamMember()
+        {
+            cmdStr = "";
+            cmdStr += "select tm.ID_TM, p.ID_P, p.FirstName_C, p.LastName_C, p.FirstName_E, p.LastName_E";
+        }
+
         /// <summary>
         /// 从数据库获取指定球员所有比赛的单场数据
         /// </summary>
@@ -56,7 +64,12 @@ namespace TestWeb.DAL
         /// <returns></returns>
         public List<PlayerGameStats> GetPlayerStats(int id)
         {
-            cmdStr = "select P.ID_P, P.FirstName_E, P.LastName_E, P.FirstName_C, P.LastName_C, G.Season, G.GameTime, T_a.Name_C as AwayTeam, T_b.Name_C as HomeTeam, T.Name_C, GPS.Starter ,GPS.PlayingTime, GPS.Points, GPS.Shots, GPS.ShotsHit, GPS.ThreePoints, GPS.ThreePointsHit, GPS.FreeThrow, GPS.FreeThrowHit,GPS.OffensiveRebound, GPS.DefensiveRebound, GPS.Block, GPS.Assists, GPS.Steals, GPS.Foul, GPS.Faults from Player as P, TeamMember as TM, GamePlayerStats as GPS, Team as T, Game as G inner join Team T_a on G.Away=T_a.ID_T inner join Team T_b on G.Home=T_b.ID_T where GPS.Game=G.ID_G and GPS.Player=TM.ID_TM and TM.Player=P.ID_P and GPS.Team=T.ID_T and P.ID_P=" + id.ToString();
+            cmdStr = "";
+            cmdStr += "select P.ID_P, P.FirstName_E, P.LastName_E, P.FirstName_C, P.LastName_C, G.Season, G.GameTime, T_a.Name_C as AwayTeam, T_b.Name_C as HomeTeam, T.Name_C, GPS.Starter ,GPS.PlayingTime, GPS.Points, GPS.Shots, GPS.ShotsHit, GPS.ThreePoints, GPS.ThreePointsHit, GPS.FreeThrow, GPS.FreeThrowHit,GPS.OffensiveRebound, GPS.DefensiveRebound, GPS.Block, GPS.Assists, GPS.Steals, GPS.Foul, GPS.Faults";
+            cmdStr += " from Player as P, TeamMember as TM, GamePlayerStats as GPS, Team as T, Game as G";
+            cmdStr += " inner join Team T_a on G.Away=T_a.ID_T";
+            cmdStr += " inner join Team T_b on G.Home=T_b.ID_T";
+            cmdStr += " where GPS.Game=G.ID_G and GPS.Player=TM.ID_TM and TM.Player=P.ID_P and GPS.Team=T.ID_T and P.ID_P=" + id.ToString();
             DataSet resultStats = ServerHelper.GetQueryResultList(cmdStr);
             List<PlayerGameStats> returnList = new List<PlayerGameStats>();
             foreach (DataRow dr in resultStats.Tables[0].Rows)

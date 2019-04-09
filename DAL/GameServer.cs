@@ -194,6 +194,27 @@ namespace TestWeb.DAL
         }
 
         /// <summary>
+        /// 从数据库查询某一条球员数据
+        /// </summary>
+        /// <param name="id">数据ID</param>
+        /// <returns></returns>
+        public PlayerGameStats GetPlayerGameStatsSingle(int id)
+        {
+            cmdStr = "";
+            cmdStr += "select gps.ID_GPS, Player.ID_P, Player.FirstName_C, Player.LastName_C, Player.FirstName_E, Player.LastName_E,";
+            cmdStr += "Game.ID_G, Game.Season, Game.GameTime, Game.Away, T_a.Name_C as AwayName, Game.Home, T_h.Name_C as HomeName, T_t.ID_T as TeamId, T_t.Name_C as TeamName,";
+            cmdStr += "gps.PlayingTime, gps.Starter, gps.Points, gps.Shots, gps.ShotsHit, gps.ThreePoints, gps.ThreePointsHit, gps.FreeThrow, gps.FreeThrowHit, gps.OffensiveRebound, gps.DefensiveRebound, gps.Block, gps.Assists, gps.Steals, gps.Faults, gps.Foul";
+            cmdStr += " from GamePlayerStats as gps inner join Team T_t on gps.Team=T_t.ID_T,";
+            cmdStr += "Player, TeamMember, Game";
+            cmdStr += " inner join Team T_a on Game.Away=T_a.ID_T";
+            cmdStr += " inner join Team T_h on Game.Home=T_h.ID_T";
+            cmdStr += " where gps.Player=TeamMember.ID_TM and TeamMember.Player=Player.ID_P and gps.Game=Game.ID_G and gps.ID_GPS=" + id.ToString();
+            DataSet ds = ServerHelper.GetQueryResultList(cmdStr);
+            PlayerGameStats returnPGS = PackageHelper.PackagePlayerGameStats(ds.Tables[0].Rows[0]);
+            return returnPGS;
+        }
+
+        /// <summary>
         /// 向数据库插入新增比赛记录
         /// </summary>
         /// <param name="time">比赛时间</param>
@@ -240,6 +261,51 @@ namespace TestWeb.DAL
         {
             cmdStr = "";
             cmdStr += "delete from Game where ID_G=" + id.ToString();
+            return ServerHelper.ExecuteNonQuery(cmdStr);
+        }
+
+        /// <summary>
+        /// 向数据库插入新增比赛球员数据记录
+        /// </summary>
+        /// <param name="pgs">PlayerGameStats实例</param>
+        /// <returns></returns>
+        public int InsertGamePlayerStats(PlayerGameStats pgs)
+        {
+            cmdStr = "";
+            cmdStr += "if not exists(select * from GamePlayerStats where Game=" + pgs.GameId.ToString() + " and Player=" + pgs.PlayerId.ToString() + ")";
+            cmdStr += "insert into GamePlayerStats values (" + pgs.GameId.ToString() + "," + pgs.TeamMemberId.ToString() + "," + pgs.Points.ToString() + "," + pgs.Shots.ToString() + "," + pgs.ShotsHit.ToString() + "," + pgs.ThreePoints.ToString() + "," + pgs.ThreePointsHit.ToString() + "," + pgs.FreeThrow.ToString() + "," + pgs.FreeThrowHit.ToString() + "," + pgs.OffensiveRebound.ToString() + "," + pgs.DefensiveRebound.ToString() + "," + pgs.Block.ToString() + "," + pgs.Assists.ToString() + "," + pgs.Steals.ToString() + "," + pgs.Foul.ToString() + "," + pgs.Faults.ToString() + "," + (pgs.Starter ? "1" : "0") + "," + pgs.PlayingTime.ToString() + "," + pgs.TeamId.ToString() + ")";
+            cmdStr += ";select @@IDENTITY as Id";
+            return ServerHelper.ExecuteScalar(cmdStr);
+        }
+
+        /// <summary>
+        /// 修改数据库中球员比赛数据
+        /// </summary>
+        /// <param name="pgs">PlayerGameStats对象</param>
+        /// <returns></returns>
+        public int UpdateGamePlayerStats(PlayerGameStats pgs)
+        {
+            cmdStr = "";
+            cmdStr += "update GamePlayerStats set Game=" + pgs.GameId.ToString();
+            cmdStr += ",Player=" + pgs.TeamMemberId.ToString();
+            cmdStr += ",Points=" + pgs.Points.ToString();
+            cmdStr += ",Shots=" + pgs.Shots.ToString();
+            cmdStr += ",ShotsHit" + pgs.ShotsHit.ToString();
+            cmdStr += ",ThreePoints" + pgs.ThreePoints.ToString();
+            cmdStr += ",ThreePointsHit" + pgs.ThreePointsHit.ToString();
+            cmdStr += ",FreeThrow" + pgs.FreeThrow.ToString();
+            cmdStr += ",FreeThrowHit" + pgs.FreeThrowHit.ToString();
+            cmdStr += ",OffensiveRebound" + pgs.OffensiveRebound.ToString();
+            cmdStr += ",DefensiveRebound" + pgs.DefensiveRebound.ToString();
+            cmdStr += ",Block=" + pgs.Block.ToString();
+            cmdStr += ",Assists=" + pgs.Assists.ToString();
+            cmdStr += ",Steals=" + pgs.Steals.ToString();
+            cmdStr += ",Foul=" + pgs.Foul.ToString();
+            cmdStr += ",Faults=" + pgs.Faults.ToString();
+            cmdStr += ",Starter=" + (pgs.Starter ? "1" : "0");
+            cmdStr += ",PlayingTime=" + pgs.PlayingTime.ToString();
+            cmdStr += ",Team=" + pgs.TeamId.ToString();
+            cmdStr += " where ID_GPS=" + pgs.StatsId.ToString();
             return ServerHelper.ExecuteNonQuery(cmdStr);
         }
 

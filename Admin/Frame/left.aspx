@@ -51,9 +51,9 @@
             var currentIndex;
             listItem.click(function () {
                 clickIndex = listItem.index($(this));
-                console.log(listItem.filter(".sel").length);
+                //console.log(listItem.filter(".sel").length);
                 if (listItem.filter(".sel").length > 0) {
-                    console.log("-1");
+                    //console.log("-1");
                     currentIndex = listItem.index(listItem.filter(".sel"));
                     if (clickIndex == currentIndex) {
                         $(this).removeClass("sel");
